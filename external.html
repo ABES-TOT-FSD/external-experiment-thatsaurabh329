@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecommerce Navbar</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background: #f4f4f4;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    padding: 12px 20px;
+    color: white;
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .nav-links a:hover {
+    color: #ff9900;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-box input {
+    padding: 6px;
+    border: none;
+    outline: none;
+  }
+
+  .search-box button {
+    padding: 6px 10px;
+    background: #ff9900;
+    border: none;
+    cursor: pointer;
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  /* HAMBURGER */
+  .menu-toggle {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  /* MOBILE STYLE */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #111;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .search-box {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">ShopX</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Deals</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <button>🔍</button>
+  </div>
+
+  <div class="icons">
+    🛒
+    👤
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
